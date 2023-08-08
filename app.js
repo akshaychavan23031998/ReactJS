@@ -1,3 +1,7 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+
 /*
 EX-01: soo this is to create a simple single div with h4 tag in it, by React.
 <div>
@@ -24,6 +28,7 @@ with the all the attributes & text need to be printed into it as we given above 
         <h4> I am Nested HTML File </h4>
     </div>
 </div> 
+Note:- ReactElemet(this is a Object) ==> HTML(Browser Understand)
 
 const parent = React.createElement("div", {id:"parent"}, 
     React.createElement("div", {id:"child"}, 
@@ -32,7 +37,6 @@ const parent = React.createElement("div", {id:"parent"},
 );
 console.log(parent);
 reactroot.render(parent);
-Note:- ReactElemet(this is a Object) ==> HTML(Browser Understand)
 */
 
 
