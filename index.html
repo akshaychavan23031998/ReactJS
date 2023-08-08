@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <title>Namaste-React</title>
+</head>
+<body>
+    <h1> 1st way by using simple html to display hellow world </h1>
+    <div>
+        <h4> Hellow World from HTML !! </h4>
+    </div>
+    <!-- Note No.01:- soo here we have created by using simple html only soo how i can create with Javascript ??
+    means i wanted to insert/inject hello world between h1 tags by using javascript soo for 
+    that we need to use javascript and to use it we need to use script tag to write javascript. -->
+<hr>
+    <h1> 2nd way by using simple Javascript to display hellow world </h1>
+    <div id="root">    </div>
+    <script>
+        const heading = document.createElement("h4");          //it just created emty the heading tag.
+        heading.innerHTML = "Hello World Using Javascript !!"; //value under this tag
+        const root = document.getElementById("root");          //this will give the div
+    // Note No.01:- now i wanted to inject my heading into the root, can be done using appendChild function, 
+    // here my child is heading and parent is root. 
+        root.appendChild(heading);
+    </script>
+    <hr>
+    <h1> 3rd way by using React to display hellow world </h1>
+    <div id="reactroot">    </div>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <!-- this is the core react file -->
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <!-- this is the ReactDOM file used by browser -->
+    <script src="/app.js">
+        // i can create all these react code everything inside the seperate file in our case its app.js;
+        // const reactheading = React.createElement("h4", {id:"heading"}, "Hello world From React !!");
+        // const reactroot = ReactDOM.createRoot(document.getElementById("reactroot"));
+        // reactroot.render(reactheading);
+    </script>
+</body>
+</html>
