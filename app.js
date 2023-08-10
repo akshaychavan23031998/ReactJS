@@ -1,67 +1,80 @@
 import React from 'react';
 import ReactDOM, { render } from 'react-dom';
+
 /*
-React Element:- 
-1st way:- Create a element using the React.
-React.createElement => React Element (Creates an Object) => when we Render with root => its becomes an HTML.
-const heading = React.createElement("h3", {id:"h3"}, "Namaste into the H3 Tag");
-console.log(heading);    //its an object i.e element.
+Low Level Component Design:- 
+Food App
+    -Header
+        -Logo
+        -Nav Bar
+    -Body
+        -Search Barc
+        -Restorent Container
+            - Restorent Cards
+    -Footer
+        -CopyRight
+        -Links
+        -Address
+        -Contact
+*/
+
+
+const Header = () => {
+    return (
+        <div className="header">
+            <div className='logo-container'>
+                <img className='logo' src='https://images-platform.99static.com/O3ZHfJeHB741xpyYH95tWvMsdTI=/0x0:1279x1279/500x500/top/smart/99designs-contests-attachments/63/63966/attachment_63966256'  />
+            </div>
+            <div className='nav-items'>
+                <ul>
+                    <li> Home </li>
+                    <li> About Us </li>
+                    <li> Contact Us </li>
+                    <li> Cart </li>
+                </ul>
+            </div>
+        </div>
+    );
+};
+
+const RestaurantCard = (props) => {
+    // console.log(props);
+    return (
+        <div className='res-card'>
+            <h3> {props.resto} </h3>
+            <img className='food-img' src='https://b.zmtcdn.com/data/dish_photos/274/aff4a71d82db51982138730919622274.png' />
+            <h4> {props.dish} </h4>
+            <h4> {props.stars} </h4>
+            <h4> {props.time} </h4>
+        </div>
+    );
+};
+
+
+
+const Body = () => {
+    return (
+        <div className='body'>
+            <div className='search'> Search </div>
+            <div className='res-container'> 
+                <RestaurantCard resto="Meghana Foods" dish="Biryani" stars="4.2" time="32 mins"/>
+                <RestaurantCard resto="KFC" dish="Burger" stars="4.6" time="24 mins"/>
+                <RestaurantCard resto="BurgerKing" dish="NonVeg-Burger" stars="4.0" time="44 mins"/>
+            </div>
+        </div>
+    );
+};
+const AppLayout = () => {
+    return (
+        <div className="app">
+            <Header />
+            <Body/>
+        </div>
+    );
+};
+
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(heading);
-React.createElement => Creates an Object => when we Render with root => its becomes an HTML.
-*/
-
-/*
-2nd way:- Create a element using the JSX.
-JSX => bebal transpiles the code to => React.createElement => Creates an Object => when we Render with root => its becomes an HTML.
-const jsxheading = <h3 id="h3"> Namaste into jsxheading </h3>
-root.render(jsxheading);
-*/
-
-/*
-Note:-
-soo what happen is kii when i render this with my root
-whatever is there is in root (index.html) it will be 
-replaced by [root.render(heading);]
-if its not rendered then we will see the h3 tag from index.html
-and the msg is Not Rendered.
-*/
-
-/*
-React Components:-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-const HeadingComponet = () => {
-    return <h3> Namaste From HeadingComponet </h3>
-}
-All so can be written as.
-const HeadingComponet1 = () => (
-    <h3> Namaste From HeadingComponet1 </h3>
-);
-we can alsoo write this as below by removing the retrn work soo that it becomes in single line.
-const HeadingComponet2 = () => <h3> Namaste From HeadingComponet2 </h3>;
-naw how to render this components ??
-
-root.render(heading);                    // Render of Element.
-root.render(<HeadingComponet />);           // Render of components.
-root.render(<HeadingComponet1 />);
-root.render(<HeadingComponet2 />);
-*/
-
-const Titel = () => {
-    <h1 className='head' tabIndex="5"> Namaste from Title </h1>
-}
-//component composition:- a component under another componet.
-const number = 10000;
-const HeadingComponet = () => {
-    <div id='container'>
-        <Titel />   
-        <Title></Title>
-        {Titel()}
-        {number}                 
-        <h3 className='heading'> Namaste From HeadingComponet </h3>
-    </div>
-}
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<HeadingComponet />);
+root.render(<AppLayout />);
 
 
