@@ -50,3 +50,28 @@
     margin: 10px;
     cursor: pointer;
 }
+
+.shimmer-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.shimmer-card {
+    width: 200px;
+    height: 400px;
+    background-color: #f0f0f0;
+    margin: 20px;
+}
+
+.login {
+    padding: 0 20px;
+    margin-right: 20px;
+}
+
+.filter {
+    display: flex;
+}
+
+.btn-search {
+    cursor: pointer;
+}

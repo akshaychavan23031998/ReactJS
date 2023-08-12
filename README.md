@@ -39,3 +39,6 @@ Food App
             soo to resolve this issue we use Hooks for this problem we will 
             use useState, which utility function, which is simple Normal JS Function.
 */
+
+we used useState function to sort out and diplay the Highrated reasorents.
+we used useEffect function to fetch my API data from the backend.
