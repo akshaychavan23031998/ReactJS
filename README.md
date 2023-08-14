@@ -42,3 +42,22 @@ Food App
 
 we used useState function to sort out and diplay the Highrated reasorents.
 we used useEffect function to fetch my API data from the backend.
+
+# UseEffect Hooks:- 
+case.01:- if No dependancy array the useEffect will be called on every render.
+Ex:-
+    useEffect(() => {
+        console.log("No Empty Array");
+    });
+
+case.02:-if Dependancy array is empty = [] => use Effect is called on initial Render (Just Once).
+Ex:-
+    useEffect(() => {
+        console.log("No Empty Array");
+    }, []);
+
+case.03:-if Dependancy array is [btnName] => called everytime btnName is updated.
+Ex:-
+    useEffect(() => {
+        console.log("No Empty Array");
+    }, [btnName]);
