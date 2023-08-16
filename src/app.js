@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM, { render } from 'react-dom';
 import Header from './components/Header';
 import Body from './components/Body';
-import About from './components/about';
+import About from './components/About';
 import Contactus from './components/Contactus';
 import Error from './components/Error';
 import Menu from './components/Menu';
