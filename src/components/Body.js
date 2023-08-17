@@ -26,8 +26,8 @@ const Body = () => {
         console.log(json);
     };
 
-    const onlineStatus = useOnlineStatus();
-    if (onlineStatus === false) return <h1> Your Offline </h1>
+    const OnlineStatus = useOnlineStatus();
+    if (OnlineStatus === false) return <h1> Your Offline </h1>
 
 //conditional rendering:- rendering a component on the basis of the condition called conditional rendering.
     if(reslist.length === 0) {
