@@ -1,18 +1,9 @@
 import { useEffect } from "react";
+import { useParams } from "react-router-dom";
 const Menu = () => {
-
-    useEffect ( () => {
-        fetchMenu();
-    }, []);
-
-    const fetchMenu = async () => {
-        const data = await fetch(
-            ""
-        );
-        const json = await data.json();
-        console.log(json);
-    }
     
+    const  {resId} = useParams();
+    const resInfo = useResMenu(resId);  //custom hooks
     return (
         <div className="menu">
             <h1> Name of Restaurant </h1>

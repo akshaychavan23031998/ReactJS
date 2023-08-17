@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
+import useOnlineStatus from "../utills/useOnlineStatus";
 
 const Body = () => {
     let[reslist, setreslist] = useState([
@@ -25,10 +26,14 @@ const Body = () => {
         console.log(json);
     };
 
+    const onlineStatus = useOnlineStatus();
+    if (onlineStatus === false) return <h1> Your Offline </h1>
+
 //conditional rendering:- rendering a component on the basis of the condition called conditional rendering.
     if(reslist.length === 0) {
         return <Shimmer/>;
     }
+
 //turnory operator:- 
 // return if(reslist.length === 0) ? <Shimmer/> : (     ;
     return (

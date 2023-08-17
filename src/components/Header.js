@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utills/useOnlineStatus";
 
 const Header = () => {
     const [btnName, setbtnName]= useState("Login");
@@ -8,6 +9,7 @@ const Header = () => {
         console.log("No Empty Array");
     }, [btnName]);
 
+    const OnlineStatus = useOnlineStatus();
     return (
         <div className="header">
             <div className='logo-container'>
@@ -15,6 +17,9 @@ const Header = () => {
             </div>
             <div className='nav-items'>
                 <ul>
+                    <li> 
+                        Online status: {OnlineStatus ? "Online" : "Offline"}
+                    </li>
                     <li> 
                         <Link to="/"> Home </Link> 
                     </li>

@@ -7,6 +7,9 @@ import Contactus from './components/Contactus';
 import Error from './components/Error';
 import Menu from './components/Menu';
 import { createBrowserRouter, RouterProvider, Outlet} from 'react-router-dom';
+import React, {lazy} from 'react';
+
+const contact = lazy(() => import("./components/Contactus"));   //ill load my contact lazy loading.
 
 const AppLayout = () => {
     return (
