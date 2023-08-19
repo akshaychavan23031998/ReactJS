@@ -71,6 +71,7 @@ const Body = () => {
                     Top Rated Restaurant
                 </button>
             </div>
+            
             <div className='res-container'> 
                 <RestaurantCard resto="Meghana Foods" dish="veg-Biryani" stars="4.2" time="32 mins"/>
                 <RestaurantCard resto="KFC" dish="Burger" stars="4.6" time="24 mins"/>

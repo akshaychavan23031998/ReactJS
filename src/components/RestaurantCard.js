@@ -11,4 +11,15 @@ const RestaurantCard = (props) => {
     );
 };
 
+
+const PramotedRestaurantCard = (RestaurantCard) => {
+    return () => {
+        return (
+            <div>
+                <label> Pramoted </label>
+                <RestaurantCard/>
+            </div>
+        );
+    };
+};
 export default RestaurantCard;
