@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utills/useOnlineStatus";
+import { useSelector } from "react-redux";
 
 const Header = () => {
     const [btnName, setbtnName]= useState("Login");
@@ -8,6 +9,9 @@ const Header = () => {
     useEffect(() => {
         console.log("No Empty Array");
     }, [btnName]);
+
+    const cartItems = useSelector((store) => store.cart.item);
+    console.log(cartItems);
 
     const OnlineStatus = useOnlineStatus();
     return (

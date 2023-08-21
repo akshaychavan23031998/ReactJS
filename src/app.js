@@ -8,15 +8,19 @@ import Error from './components/Error';
 import Menu from './components/Menu';
 import { createBrowserRouter, RouterProvider, Outlet} from 'react-router-dom';
 import React, {lazy} from 'react';
+import { Provider } from 'react-redux';
+import appStore from './utills/appStore';
 
 const contact = lazy(() => import("./components/Contactus"));   //ill load my contact lazy loading.
 
 const AppLayout = () => {
     return (
-        <div className="app">
-            <Header />
-            <Outlet/>
-        </div>
+        <Provider store={appStore}>
+            <div className="app">
+                <Header />
+                <Outlet/>
+            </div>
+        </Provider>
     );
 };
 
