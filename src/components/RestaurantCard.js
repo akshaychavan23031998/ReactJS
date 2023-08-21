@@ -12,7 +12,7 @@ const RestaurantCard = (props) => {
 };
 
 
-const PramotedRestaurantCard = (RestaurantCard) => {
+export const PramotedRestaurantCard = (RestaurantCard) => {
     return () => {
         return (
             <div>
